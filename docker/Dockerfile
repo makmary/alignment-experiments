@@ -87,3 +87,6 @@ RUN pip3 install jupyter
 RUN pip3 install -U pip>=20.3
 RUN python3 -m pip install --user open3d
 RUN pip3 install --upgrade git+https://github.com/colmap/pycolmap
+
+
+WORKDIR /
