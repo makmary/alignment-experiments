@@ -33,7 +33,6 @@ docker run \
     --gpus all --rm -it  \
     -v /home/user_name/workspace:/workspace \
     --name sk_pixsfm sk3d/pixsfm_experiments:latest /bin/bash
-  
 ```
 
 Then, run experiments in `pixsfm-experiments/experiments/` to obtain sparse SfM results. 
@@ -54,8 +53,7 @@ pixel-perfect-sfm
        └── query
            ├── 0000.jpg       
            ├── 0001.jpg       
-           └── ...  
-       
+           └── ...       
 ```
 
 * If you have ready reconstruction (COLMAP output), 
