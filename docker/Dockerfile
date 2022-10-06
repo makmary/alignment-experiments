@@ -90,3 +90,4 @@ RUN pip3 install --upgrade git+https://github.com/colmap/pycolmap
 
 
 WORKDIR /
+COPY triangulation.py /pixel-perfect-sfm/Hierarchical-Localization/hloc/
