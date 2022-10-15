@@ -18,6 +18,30 @@ def modified_write_points3D_text(points3D, path):
 #             for image_id, point2D in zip(pt.image_ids, pt.point2D_idxs):
 #                 track_strings.append(" ".join(map(str, [image_id, point2D])))
             fid.write(" ".join(track_strings) + "\n")   
+    
+def modified_write_images_text(images, path):
+    if len(images) == 0:
+        mean_observations = 0
+    else:
+        mean_observations = sum((len(img.point3D_ids) for _, img in images.items()))/len(images)
+    HEADER = "# Image list with two lines of data per image:\n" + \
+             "#   IMAGE_ID, QW, QX, QY, QZ, TX, TY, TZ, CAMERA_ID, NAME\n" + \
+             "#   POINTS2D[] as (X, Y, POINT3D_ID)\n" + \
+             "# Number of images: {}, mean observations per image: {}\n".format(len(images), mean_observations)
+
+    with open(path, "w") as fid:
+        fid.write(HEADER)
+        for _, img in images.items():
+            image_header = [img.id, *img.qvec, *img.tvec, img.camera_id, img.name]
+            first_line = " ".join(map(str, image_header))
+            fid.write(first_line + "\n")
+
+            points_strings = []
+#             for xy, point3D_id in zip(img.xys, img.point3D_ids):
+#                 points_strings.append(" ".join(map(str, [*xy, point3D_id])))
+            fid.write(" ".join(points_strings) + "\n")    
+    
+    
 
 def create_point_cloud(lst, filename):
     """
@@ -93,3 +117,7 @@ def draw_registration_result(source, target, transformation):
     source_temp.transform(transformation)
     o3d.visualization.draw_geometries = draw_geometries
     o3d.visualization.draw_geometries([source_temp, target_temp])           
+    
+    
+    
+    
