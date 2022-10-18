@@ -82,7 +82,7 @@ Here is a rough explanation about what goes in `experimnets` folder:
 * Query Localizer with known refined camera poses
 (reference SfM was created from the first 3 known refined camera poses,  we used GT parameters for camera intrinsics to build SfM and perform query localization)
 
-[![Query Localizer w/refined images: Dragon](https://www.youtube.com/watch?v=fNB-kHMler8)](https://www.youtube.com/watch?v=fNB-kHMler8 "Query Localizer w/refined images: Dragon") 
+[![Query Localizer w/refined images: Dragon]()](https://www.youtube.com/watch?v=fNB-kHMler8 "Query Localizer w/refined images: Dragon") 
 
 [![Query Localizer w/refined images: Ceramic girl in hat]](https://www.youtube.com/watch?v=sbYs1Sq9v5E "Query Localizer w/refined images: Ceramic girl in hat")    
 
