@@ -10,6 +10,10 @@ With `pixsfm`, you can:
 - evaluate the refinement with new dense or sparse features on the ETH3D dataset
 
 
+### Report
+You can read a report about results [here](https://docs.google.com/document/d/1Cv0MAno0lxjvyMcI2BiIOtPkgvDE5eKsuz-4B2ji0t8/edit?usp=sharing).
+
+
 ### Building the image
 You can run build the image, which is located in `docker/Dockerfile`, directly via 
 ```
