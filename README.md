@@ -82,28 +82,28 @@ Here is a rough explanation about what goes in `experimnets` folder:
 * Query Localizer with known refined camera poses
 (reference SfM was created from the first 3 known refined camera poses,  we used GT parameters for camera intrinsics to build SfM and perform query localization)
 
-[![Query Localizer w/refined images: Dragon]()](https://www.youtube.com/watch?v=fNB-kHMler8 "Query Localizer w/refined images: Dragon") 
+[Query Localizer w/refined images: Dragon](https://www.youtube.com/watch?v=fNB-kHMler8 "Query Localizer w/refined images: Dragon") 
 
-[![Query Localizer w/refined images: Ceramic girl in hat]](https://www.youtube.com/watch?v=sbYs1Sq9v5E "Query Localizer w/refined images: Ceramic girl in hat")    
+[Query Localizer w/refined images: Ceramic girl in hat](https://www.youtube.com/watch?v=sbYs1Sq9v5E "Query Localizer w/refined images: Ceramic girl in hat")    
 
-[![Query Localizer w/refined images: White piggybank]](https://www.youtube.com/watch?v=cL7VNAz1pDw "Query Localizer w/refined images: White piggybank") 
+[Query Localizer w/refined images: White piggybank](https://www.youtube.com/watch?v=cL7VNAz1pDw "Query Localizer w/refined images: White piggybank") 
 
-[![Query Localizer w/refined images: Amber vase]](https://youtube.com/shorts/TJZCvGteHGI "Query Localizer w/refined images:  Amber vase") 
+[Query Localizer w/refined images: Amber vase](https://youtube.com/shorts/TJZCvGteHGI "Query Localizer w/refined images:  Amber vase") 
 
 
 * Query Localizer with known refined camera poses (optimum)
 (reference SfM was created from known camera poses, and iteratively added with a new camera pose after query localization step to find the next query’s camera pose. This experiment takes too much time, approximately 8 hours for 97 images!)
 
-[![Query Localizer w/refined images (opt): Dragon]](https://www.youtube.com/watch?v=D3vnxP-rh_w "Query Localizer w/refined images (opt): Dragon")    
+[Query Localizer w/refined images (opt): Dragon](https://www.youtube.com/watch?v=D3vnxP-rh_w "Query Localizer w/refined images (opt): Dragon")    
 
-[![Query Localizer w/refined images (opt): Ceramic girl in hat]](https://www.youtube.com/watch?v=fv-ZNeVk0bw "Query Localizer w/refined images (opt): Ceramic girl in hat")    
+[Query Localizer w/refined images (opt): Ceramic girl in hat](https://www.youtube.com/watch?v=fv-ZNeVk0bw "Query Localizer w/refined images (opt): Ceramic girl in hat")    
 
-[![Query Localizer w/refined images (opt): White piggybank]](https://www.youtube.com/watch?v=kejLLuBqvIA "Query Localizer w/refined images (opt): White piggybank")  
+[Query Localizer w/refined images (opt): White piggybank](https://www.youtube.com/watch?v=kejLLuBqvIA "Query Localizer w/refined images (opt): White piggybank")  
 
 * Comparison between previous two experiments
 
-[![Query Localizer comparison: Dragon]](https://www.youtube.com/watch?v=EYzzs90c6No "Query Localizer comparison: Dragon")    
+[Query Localizer comparison: Dragon](https://www.youtube.com/watch?v=EYzzs90c6No "Query Localizer comparison: Dragon")    
 
-[![Query Localizer comparison: Ceramic girl in hat]](https://www.youtube.com/watch?v=tcDVBzvsbCI "Query Localizer comparison: Ceramic girl in hat")    
+[Query Localizer comparison: Ceramic girl in hat](https://www.youtube.com/watch?v=tcDVBzvsbCI "Query Localizer comparison: Ceramic girl in hat")    
 
-[![Query Localizer comparison: White piggybank]](https://www.youtube.com/watch?v=13iYebf8eL4 "Query Localizer comparison: White piggybank")  
+[Query Localizer comparison: White piggybank](https://www.youtube.com/watch?v=13iYebf8eL4 "Query Localizer comparison: White piggybank")  
