@@ -2,6 +2,8 @@ import plotly.graph_objects as go
 import open3d as o3d
 import numpy as np
 import copy
+import numpy as np
+from scipy.stats import norm, nct
 
 def modified_write_points3D_text(points3D, path):
     mean_track_length = 0
@@ -120,4 +122,34 @@ def draw_registration_result(source, target, transformation):
     
     
     
+def get_conf_upper_bound(data):
+    n = len(data)
     
+    if n in [0, 1]:
+        return 0
+    # Percentile for the TI to estimate
+    p=0.9
+    
+    # confidence level
+    g = 0.95
+
+    # mean estimate based on the sample
+    mu_est = np.mean(data)
+
+    # standard deviation estimated based on the sample
+    sigma_est = np.std(data, ddof=1)
+
+    # (100*p)th percentile of the standard normal distribution
+    zp = norm.ppf(p)
+
+    # gth quantile of a non-central t distribution
+    # with n-1 degrees of freedom and non-centrality parameter np.sqrt(n)*zp
+    t = nct.ppf(g, df=n-1., nc=np.sqrt(n)*zp)
+
+    # k factor from Young et al paper
+    k = t / np.sqrt(n)
+
+    # One-sided tolerance upper bound
+    conf_upper_bound = mu_est + (k*sigma_est)
+    
+    return conf_upper_bound    

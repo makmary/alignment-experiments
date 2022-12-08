@@ -5,10 +5,8 @@ This directory contains scripts needed to run PixSfM experiments for Sk3D or cus
 With `pixsfm`, you can:
 
 - reconstruct and refine a scene using hloc, from scratch or with given camera poses
-- localize and refine new query images using hloc
-- run the keypoint or bundle adjustments on a COLMAP database or 3D model
-- evaluate the refinement with new dense or sparse features on the ETH3D dataset
-
+- localize and refine new query images using hloc and PixSfM
+- run the featuremetric keypoint or feature-reference bundle adjustments on a COLMAP database or 3D model
 
 ### Report
 You can read a report about results [here](https://docs.google.com/document/d/1Cv0MAno0lxjvyMcI2BiIOtPkgvDE5eKsuz-4B2ji0t8/edit?usp=sharing).
@@ -74,9 +72,14 @@ pixel-perfect-sfm
 
 ### Code structure
 Here is a rough explanation about what goes in `experimnets` folder:
+ * `experiments/check_projected_texture.ipynb`: helps to project texture on the mesh with the help of nvdiffrast
  * `experiments/icp_coordinates.ipynb`: finds transition matrix from one coordinate system to another using the centers of cameras from `images.txt` files, saves updated camera poses to a new file.
  * `experiments/Query_Localizer.ipynb`: runs query localization and refinement for query images from `pixel-perfect-sfm/datasets/{scene_name}/query` by building SfM using images from `pixel-perfect-sfm/datasets/{scene_name}/mapping`
- * `experiments/Query_Localizer_known_camera_poses_sfm.ipynb*`:  
+ * `experiments/Query_Localizer_known_camera_poses_sfm.ipynb*`: runs query localization and refinement for query images by building SfM from known camera poses.
+ * `experiments/Query_Localizer_optimum.ipynb`: runs query localization and refinement for query images by building SfM and updating it with previously found camera poses of query images.
+ * `experiments/raytracing_example.ipynb`: fifth experiment, where we tried to use the information about tentative matching graphs. Using refined 2D key points after performing FMKA to build a graph of matches. Building equivalent graph, but with 3D points obtained from ray casting on surface of our scan (finding 2D-3D correspondances). Removing 3D points outliers within same track with the help of algorithm for finding smallest bounding sphere. Performing FMBA (not completed).
+ * `experiments/raytracing_example_exhaustive.ipynb`: fifth experiment, where we tried to use the information about tentative matching graphs. Here estimation_and_geometric_verification is added for experiment in order to get rid of false matches. Information about matches was taken from two_view_geometries table. Pairs from exhaustive.
+ * `experiments/raytracing_example_retrieval.ipynb`: fifth experiment, where we tried to use the information about tentative matching graphs. Pairs from retrieval. (not completed)
  * `experiments/run_1st_experiment.ipynb`: default pipeline with different configurations to obtain SfM sparse model from given images.
  * `experiments/run_2nd_experiment.ipynb`: reconstruct sparse model from known camera poses using hloc and PixSfM.
  * `experiments/run_3rd_experiment.ipynb`: substitute 3d points of given SfM reconstruction by another GT reconstruction, run feature-metric BA (Bundle Adjustment)
@@ -111,3 +114,13 @@ Here is a rough explanation about what goes in `experimnets` folder:
 [Query Localizer comparison: Ceramic girl in hat](https://www.youtube.com/watch?v=tcDVBzvsbCI "Query Localizer comparison: Ceramic girl in hat")    
 
 [Query Localizer comparison: White piggybank](https://www.youtube.com/watch?v=13iYebf8eL4 "Query Localizer comparison: White piggybank")  
+
+
+### TODO
+
+Fifth experiment is not completed:
+
+- [ ] use retrieval matching and pairs from covisibility instead of exhaustive matching
+- [ ] check distribution of distances between all matches in all tracks
+- [ ] perform geometric verification with specific threshold without using COLMAP geometric verification
+- [ ] after all experiments above make a conclusion of how far 3d points from each other on the scan 
