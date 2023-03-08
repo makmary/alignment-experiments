@@ -1,4 +1,4 @@
-# Pixel-perfect-SfM experiments
+# Alignment experiments
 
 This directory contains scripts needed to run PixSfM experiments for Sk3D or custom data.
 
