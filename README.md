@@ -2,12 +2,6 @@
 
 This directory contains scripts needed to run PixSfM experiments for Sk3D or custom data.
 
-With `pixsfm`, you can:
-
-- reconstruct and refine a scene using hloc, from scratch or with given camera poses
-- localize and refine new query images using hloc and PixSfM
-- run the featuremetric keypoint or feature-reference bundle adjustments on a COLMAP database or 3D model
-
 ### Report
 You can read a report about results [here](https://docs.google.com/document/d/1Cv0MAno0lxjvyMcI2BiIOtPkgvDE5eKsuz-4B2ji0t8/edit?usp=sharing).
 
